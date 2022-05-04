@@ -6,14 +6,12 @@ Organization
 
 
 Municipality
-    3) rails g model Municipality organization:references        
-       name:string url:string
+    3) rails g model Municipality organization:references name:string url:string
 
-    4) bin/super-scaffold crud Municipality Organization,Team   
-       name:text_field url:text_field
+    4) bin/super-scaffold crud Municipality Organization,Team name:text_field url:text_field
 
     ServiceProvider 
-        rails g model service_provider name:string about:text street:string city:string state:string zip:string contact_person:string phone:string email:string url:string municipality:references
+        rails g model ServiceProvider name:string about:text street:string city:string state:string zip:string contact_person:string phone:string email:string url:string municipality:references
             bin/super-scaffold crud ServiceProvider Municipality,Organization,Team name:text_field about:text_area street:text_field city:text_field state:text_field zip:text_field contact_person:text_field phone:phone_field email:email_field url:text_field
             
             has_many :hours
