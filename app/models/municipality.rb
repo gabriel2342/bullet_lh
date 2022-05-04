@@ -1,19 +1,17 @@
-class Team < ApplicationRecord
-  include Teams::Base
-  include Webhooks::Outgoing::TeamSupport
+class Municipality < ApplicationRecord
   # 🚅 add concerns above.
 
+  belongs_to :organization
   # 🚅 add belongs_to associations above.
 
-  has_many :organizations, dependent: :destroy, enable_updates: true
   # 🚅 add has_many associations above.
 
-  # 🚅 add oauth providers above.
-
+  has_one :team, through: :organization
   # 🚅 add has_one associations above.
 
   # 🚅 add scopes above.
 
+  validates :name, presence: true
   # 🚅 add validations above.
 
   # 🚅 add callbacks above.

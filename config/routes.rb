@@ -65,6 +65,10 @@ Rails.application.routes.draw do
         namespace :platform do
           resources :applications
         end
+
+        resources :organizations do
+          resources :municipalities
+        end
       end
     end
   end
